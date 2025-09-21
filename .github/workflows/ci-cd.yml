@@ -34,6 +34,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-folder
+          path: dist
+
       - name: Dummy Deploy
         run: |
           mkdir -p /tmp/ci-cd-demo
